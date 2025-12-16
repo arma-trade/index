@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arma Trade Operational Systems 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Embedded CSS for Chart Containers and Specific Styling */
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #f1f5f9; /* Slate 100 */
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(251, 191, 36, 0.2); /* Amber border low opacity */
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fbbf24;
+        }
+    </style>
+    <!-- 
+        Palette: 
+        Background: #0f172a (Deep Slate)
+        Cards: #1e293b (Slate 800)
+        Accent: #fbbf24 (Amber 400 - Gold)
+        Text: #f1f5f9 (Slate 100)
+        Secondary Text: #94a3b8 (Slate 400)
+        
+        Plan Summary:
+        1. Header: Elegant title.
+        2. ID System: CSS Cards breakdown.
+        3. Gov Codes: CSS Grid.
+        4. Root Structure: Chart.js Bar Chart (Structure Complexity).
+        5. Project Structure: Chart.js Radar Chart (Operational Focus).
+        6. Workflow: CSS Vertical Timeline + Chart.js Line Chart (Activity Volume).
+    -->
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation / Header -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-4">
+                    <img src="logo.png" alt="Arma Trade Logo" class="h-12 w-auto">
+                    <div>
+                        <h1 class="text-xl font-bold text-white tracking-wider">ARMA TRADE</h1>
+                        <p class="text-xs text-amber-400 font-sans tracking-widest">OPERATIONAL HANDBOOK 2025</p>
+                    </div>
+                </div>
+                <div class="hidden md:block text-slate-400 text-sm">
+                    Project Codification & ERP Standards
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- SECTION 1: INTRODUCTION & ID SYSTEM -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <!-- Text Content -->
+            <div class="lg:col-span-5 space-y-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+                    The <span class="gradient-text">Unified Code</span> System
+                </h2>
+                <p class="text-lg text-slate-300 leading-relaxed">
+                    To maintain order across all digital and physical archives, Arma Trade utilizes a <strong>Compact Naming Convention</strong>. This unique ID is the DNA of every project, ensuring instant recognition in our ERP and filing systems.
+                </p>
+                <div class="p-6 bg-slate-800 rounded-xl border-l-4 border-amber-400 shadow-xl">
+                    <h3 class="text-amber-400 font-semibold mb-2">The Formula</h3>
+                    <code class="text-2xl md:text-3xl font-mono text-white block mb-2">AT-GOV-YYMM-##</code>
+                    <p class="text-slate-400 text-sm">Example: <span class="text-white font-mono">AT-DAK-2512-01</span></p>
+                </div>
+            </div>
+
+            <!-- Visualization: ID Breakdown -->
+            <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Card 1 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-4xl mb-3">🏢</div>
+                    <div class="text-2xl font-bold text-white mb-1">AT</div>
+                    <div class="text-xs text-amber-400 uppercase tracking-wider">Company</div>
+                    <p class="text-slate-400 text-xs mt-2">Fixed Prefix<br>Arma Trade</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-4xl mb-3">📍</div>
+                    <div class="text-2xl font-bold text-white mb-1">GOV</div>
+                    <div class="text-xs text-amber-400 uppercase tracking-wider">Location</div>
+                    <p class="text-slate-400 text-xs mt-2">3-Letter Code<br>(e.g., CAI)</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-4xl mb-3">📅</div>
+                    <div class="text-2xl font-bold text-white mb-1">YYMM</div>
+                    <div class="text-xs text-amber-400 uppercase tracking-wider">Date</div>
+                    <p class="text-slate-400 text-xs mt-2">Start Date<br>(Year/Month)</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col items-center text-center transform hover:scale-105 transition duration-300">
+                    <div class="text-4xl mb-3">🔢</div>
+                    <div class="text-2xl font-bold text-white mb-1">##</div>
+                    <div class="text-xs text-amber-400 uppercase tracking-wider">Serial</div>
+                    <p class="text-slate-400 text-xs mt-2">Sequence<br>(01, 02...)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GOVERNORATE CODES -->
+        <section>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-8 border-b border-slate-700 pb-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-white">Governorate <span class="text-amber-400">Reference Codes</span></h2>
+                    <p class="text-slate-400 mt-2">Standard ISO-compliant 3-letter codes for the 'GOV' section.</p>
+                </div>
+                <div class="text-right hidden md:block">
+                    <span class="bg-slate-800 text-amber-400 px-3 py-1 rounded-full text-xs font-bold border border-amber-400/30">27 Governorates</span>
+                </div>
+            </div>
+
+            <!-- CSS Grid for Codes -->
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                <!-- Generating Code Cards using simple JS loop for brevity in HTML would be cleaner, but explicit HTML for clarity -->
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Cairo</span>
+                    <span class="block text-xl font-mono text-white font-bold">CAI</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Alexandria</span>
+                    <span class="block text-xl font-mono text-white font-bold">ALX</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Port Said</span>
+                    <span class="block text-xl font-mono text-white font-bold">PSD</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Suez</span>
+                    <span class="block text-xl font-mono text-white font-bold">SUZ</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Dakahlia</span>
+                    <span class="block text-xl font-mono text-white font-bold">DAK</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Sharqia</span>
+                    <span class="block text-xl font-mono text-white font-bold">SHR</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Qalyubia</span>
+                    <span class="block text-xl font-mono text-white font-bold">KAL</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Gharbia</span>
+                    <span class="block text-xl font-mono text-white font-bold">GHA</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Menoufia</span>
+                    <span class="block text-xl font-mono text-white font-bold">MNF</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Beheira</span>
+                    <span class="block text-xl font-mono text-white font-bold">BEH</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Damietta</span>
+                    <span class="block text-xl font-mono text-white font-bold">DOM</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Kafr El Sheikh</span>
+                    <span class="block text-xl font-mono text-white font-bold">KFS</span>
+                </div>
+                 <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Giza</span>
+                    <span class="block text-xl font-mono text-white font-bold">GIZ</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Beni Suef</span>
+                    <span class="block text-xl font-mono text-white font-bold">BSW</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Fayoum</span>
+                    <span class="block text-xl font-mono text-white font-bold">FAY</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Minya</span>
+                    <span class="block text-xl font-mono text-white font-bold">MIN</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Assiut</span>
+                    <span class="block text-xl font-mono text-white font-bold">ASY</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Sohag</span>
+                    <span class="block text-xl font-mono text-white font-bold">SOH</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Qena</span>
+                    <span class="block text-xl font-mono text-white font-bold">QNA</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Luxor</span>
+                    <span class="block text-xl font-mono text-white font-bold">LXR</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Aswan</span>
+                    <span class="block text-xl font-mono text-white font-bold">ASW</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Red Sea</span>
+                    <span class="block text-xl font-mono text-white font-bold">RED</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">South Sinai</span>
+                    <span class="block text-xl font-mono text-white font-bold">SIN</span>
+                </div>
+                <div class="bg-slate-800 p-3 rounded border border-slate-700 hover:border-amber-400 transition cursor-default">
+                    <span class="block text-xs text-slate-500">Matrouh</span>
+                    <span class="block text-xl font-mono text-white font-bold">MAT</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: HQ ROOT STRUCTURE (R-TREE) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-white">HQ <span class="gradient-text">Root Directory</span></h2>
+                <p class="text-slate-300">
+                    The <strong>'R' Tree</strong> (Root) represents the permanent infrastructure of Arma Trade. Unlike projects which are transient, these folders house the company's cumulative knowledge, assets, and financial records.
+                </p>
+                <ul class="space-y-4 text-slate-400">
+                    <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R00</span>
+                        <span>System Admin: Codes, SOPs, Templates</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R01</span>
+                        <span>CRM & Sales: Leads, Opportunities</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R02</span>
+                        <span>Projects Repo: Active & Archived</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R03</span>
+                        <span>Supply Chain: Vendors, Inventory</span>
+                    </li>
+                     <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R04</span>
+                        <span>HR: Employees, Payroll</span>
+                    </li>
+                     <li class="flex items-center gap-3">
+                        <span class="bg-slate-800 p-2 rounded text-amber-400">📂 R05</span>
+                        <span>Finance: GL, AP, AR</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Visualization: Bar Chart for Structure Complexity -->
+            <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-2xl">
+                <h3 class="text-lg font-semibold text-white mb-4">Directory Complexity Overview</h3>
+                <div class="chart-container">
+                    <canvas id="rootChart"></canvas>
+                </div>
+                <p class="text-xs text-center text-slate-500 mt-4">Graph shows the number of primary sub-directories per department.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PROJECT STRUCTURE (P-TREE) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+             <!-- Visualization: Radar Chart for Project Focus -->
+             <div class="order-2 md:order-1 bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-2xl">
+                <h3 class="text-lg font-semibold text-white mb-4">Project Operational Focus</h3>
+                <div class="chart-container">
+                    <canvas id="projectRadarChart"></canvas>
+                </div>
+                <p class="text-xs text-center text-slate-500 mt-4">Distribution of document types across the project lifecycle.</p>
+            </div>
+
+            <div class="order-1 md:order-2 space-y-6">
+                <h2 class="text-3xl font-bold text-white">Project <span class="gradient-text">Site Directory</span></h2>
+                <p class="text-slate-300">
+                    The <strong>'P' Tree</strong> is the standard template copied into every new project folder. It is designed to segregate duties between the Technical Office, Site Execution, and Supply Chain while feeding data back to HQ.
+                </p>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-blue-500">
+                        <h4 class="font-bold text-white">Phase 1: Definition</h4>
+                        <p class="text-sm text-slate-400">P01 (Scope/Contract) & P02 (Drawings/Schedule)</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-amber-500">
+                        <h4 class="font-bold text-white">Phase 2: Execution</h4>
+                        <p class="text-sm text-slate-400">P03 (Supply/POs) & P04 (Site Reports/HSE)</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-lg border-l-2 border-emerald-500">
+                        <h4 class="font-bold text-white">Phase 3: Closing</h4>
+                        <p class="text-sm text-slate-400">P05 (Invoices) & P06 (As-Built/Handover)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: WORKFLOW LIFECYCLE -->
+        <section class="bg-slate-800 rounded-3xl p-8 md:p-12 border border-slate-700 relative overflow-hidden">
+            <!-- Background Decoration -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-white">The Project <span class="text-amber-400">Lifecycle</span></h2>
+                <p class="text-slate-400 mt-2 max-w-2xl mx-auto">From the first sales lead to the final handover, data flows through our system in 6 distinct stages.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Visual Timeline -->
+                <div class="space-y-0 relative">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-4 top-2 bottom-2 w-0.5 bg-slate-600"></div>
+
+                    <!-- Step 1 -->
+                    <div class="relative pl-12 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">1</div>
+                        <h4 class="text-xl font-bold text-white">Start & Define</h4>
+                        <p class="text-slate-400 text-sm">Sales Lead (R01) converts to Signed Contract. Project ID assigned. P01 created.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative pl-12 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">2</div>
+                        <h4 class="text-xl font-bold text-white">Technical Planning</h4>
+                        <p class="text-slate-400 text-sm">Tech Office uploads Shop Drawings to P02. Approval is mandatory before purchasing.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative pl-12 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">3</div>
+                        <h4 class="text-xl font-bold text-white">Procurement</h4>
+                        <p class="text-slate-400 text-sm">Supply Chain issues POs in P03 based on approved specs. Material delivered to site.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative pl-12 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">4</div>
+                        <h4 class="text-xl font-bold text-white">Build & Report</h4>
+                        <p class="text-slate-400 text-sm">Execution begins. Daily Reports & Photos uploaded to P04. Real-time progress tracking.</p>
+                    </div>
+                     <!-- Step 5 -->
+                     <div class="relative pl-12 pb-8">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">5</div>
+                        <h4 class="text-xl font-bold text-white">Billing</h4>
+                        <p class="text-slate-400 text-sm">Finance generates Client Invoices in P05 based on verified P04 progress.</p>
+                    </div>
+                     <!-- Step 6 -->
+                     <div class="relative pl-12">
+                        <div class="absolute left-0 top-0 w-8 h-8 bg-slate-900 border-2 border-amber-400 rounded-full flex items-center justify-center text-xs font-bold text-amber-400 z-10">6</div>
+                        <h4 class="text-xl font-bold text-white">Close & Archive</h4>
+                        <p class="text-slate-400 text-sm">As-Built drawings in P06. TOC signed. Project folder moved to R02 Archive.</p>
+                    </div>
+                </div>
+
+                <!-- Visualization: Line Chart for Activity -->
+                <div class="flex flex-col justify-center">
+                    <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700">
+                        <h3 class="text-lg font-semibold text-white mb-4">Document Velocity Curve</h3>
+                        <div class="chart-container">
+                            <canvas id="lifecycleChart"></canvas>
+                        </div>
+                        <p class="text-xs text-center text-slate-500 mt-4">Volume of files/activity generated per stage.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-800 pt-8 pb-12 text-center text-slate-500 text-sm">
+            <p>&copy; 2025 Arma Trade. Internal Operational Document.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- HELPER FUNCTION: Label Wrapping ---
+        function splitLabel(label) {
+            if (label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- COMMON CHART CONFIG ---
+        Chart.defaults.color = '#94a3b8'; // Slate 400
+        Chart.defaults.font.family = 'Outfit';
+        const tooltipConfig = {
+            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+            titleColor: '#fbbf24',
+            bodyColor: '#f1f5f9',
+            borderColor: 'rgba(251, 191, 36, 0.3)',
+            borderWidth: 1,
+            padding: 10,
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: ROOT STRUCTURE (BAR) ---
+        const ctxRoot = document.getElementById('rootChart').getContext('2d');
+        const rootLabels = ["Admin & Stds", "CRM & Sales", "Projects Repo", "Supply Chain", "Human Resources", "Finance"];
+        const wrappedRootLabels = rootLabels.map(splitLabel);
+
+        new Chart(ctxRoot, {
+            type: 'bar',
+            data: {
+                labels: wrappedRootLabels,
+                datasets: [{
+                    label: 'Sub-Directories',
+                    data: [2, 2, 2, 3, 2, 2], // Number of main subfolders based on documentation
+                    backgroundColor: [
+                        '#3b82f6', // Admin - Blue
+                        '#eab308', // CRM - Yellow
+                        '#ef4444', // Projects - Red
+                        '#10b981', // Supply - Emerald
+                        '#8b5cf6', // HR - Purple
+                        '#f97316'  // Finance - Orange
+                    ],
+                    borderRadius: 6,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#334155' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: PROJECT STRUCTURE (RADAR) ---
+        const ctxRadar = document.getElementById('projectRadarChart').getContext('2d');
+        const radarLabels = ["Planning (P01/02)", "Logistics (P03)", "Site Reports (P04)", "Safety (P04)", "Billing (P05)", "Closing (P06)"];
+        const wrappedRadarLabels = radarLabels.map(splitLabel);
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: wrappedRadarLabels,
+                datasets: [{
+                    label: 'Operational Priority',
+                    data: [8, 7, 10, 9, 6, 5], // Conceptual "Weight" of activity
+                    backgroundColor: 'rgba(251, 191, 36, 0.2)', // Amber transparent
+                    borderColor: '#fbbf24',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#fbbf24',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#fbbf24'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#334155' },
+                        grid: { color: '#334155' },
+                        pointLabels: {
+                            color: '#e2e8f0',
+                            font: { size: 12 }
+                        },
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: LIFECYCLE (LINE) ---
+        const ctxLine = document.getElementById('lifecycleChart').getContext('2d');
+        const lifeLabels = ["Start", "Plan", "Procure", "Build", "Bill", "Close"];
+        const wrappedLifeLabels = lifeLabels.map(splitLabel);
+
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: wrappedLifeLabels,
+                datasets: [{
+                    label: 'Activity Volume',
+                    data: [20, 40, 60, 100, 50, 30], // Conceptual activity curve
+                    borderColor: '#38bdf8', // Sky Blue
+                    backgroundColor: 'rgba(56, 189, 248, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#0f172a',
+                    pointBorderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: {
+                        display: false,
+                        beginAtZero: true
+                    },
+                    x: {
+                        grid: { color: '#334155', borderDash: [5, 5] }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
